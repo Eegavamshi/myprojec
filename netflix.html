@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Netflix</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #141414;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e50914;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li {
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li:hover {
+            color: #e50914;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: url('https://assets.nflxext.com/ffe/siteui/vlv3/3a7a7a3a-0a0a-4a3a-9a3a-3a7a7a3a0a0a/3a7a7a3a-0a0a-4a3a-9a3a-3a7a7a3a0a0a-IN-en-20230619-popsignuptwoweeks-perspective_alpha_website_small.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #e50914;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            width: max-content;
+        }
+
+        .hero button:hover {
+            background-color: #f40612;
+        }
+
+        /* Featured Section */
+        .section {
+            padding: 40px;
+            margin-top: 80px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .card {
+            min-width: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            background-color: #222;
+        }
+
+        .card img {
+            width: 100%;
+            display: block;
+        }
+
+        .card-title {
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #141414;
+            color: #666;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* Scrollbar for cards */
+        .cards::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .cards::-webkit-scrollbar-thumb {
+            background-color: #e50914;
+            border-radius: 4px;
+        }
+
+        .cards::-webkit-scrollbar-track {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 100%;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .cards {
+                gap: 10px;
+            }
+
+            .card {
+                min-width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Netflix</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>TV Shows</li>
+                <li>Movies</li>
+                <li>New & Popular</li>
+                <li>My List</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <button>Join Now</button>
+    </section>
+
+    <section class="section">
+        <h2>Popular on Netflix</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABX9v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7.jpg?r=123"
+                    alt="Movie 1" />
+                <div class="card-title">Stranger Things</div>
+            </div>
+            <div class="card">
+                <img src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABX9v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7.jpg?r=123"
+                    alt="Movie 2" />
+                <div class="card-title">The Witcher</div>
+            </div>
+            <div class="card">
+                <img src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABX9v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7.jpg?r=123"
+                    alt="Movie 3" />
+                <div class="card-title">Money Heist</div>
+            </div>
+            <div class="card">
+                <img src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABX9v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7v6q3q6v7.jpg?r=123"
+                    alt="Movie 4" />
+                <div class="card-title">Narcos</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Netflix, Inc. All rights reserved.
+    </footer>
+</body>
+
+</html>
